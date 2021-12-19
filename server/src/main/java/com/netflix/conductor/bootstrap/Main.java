@@ -20,7 +20,10 @@ import com.netflix.conductor.elasticsearch.EmbeddedElasticSearchProvider;
 import com.netflix.conductor.grpc.server.GRPCServer;
 import com.netflix.conductor.grpc.server.GRPCServerProvider;
 import com.netflix.conductor.jetty.server.JettyServerProvider;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -37,7 +40,8 @@ public class Main {
 
         if (args.length == 2) {
             System.out.println("Using log4j config " + args[1]);
-            PropertyConfigurator.configure(new FileInputStream(new File(args[1])));
+            LoggerContext context  = (LoggerContext)LogManager.getContext(false);
+            context.setConfigLocation(new File(args[1]).toURI());
         }
 
         Injector bootstrapInjector = Guice.createInjector(new BootstrapModule());

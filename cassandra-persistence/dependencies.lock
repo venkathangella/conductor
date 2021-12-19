@@ -334,7 +334,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -686,7 +686,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -1038,7 +1038,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -1453,7 +1453,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -1805,7 +1805,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -2460,7 +2460,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "ch.qos.logback:logback-classic",
                 "com.addthis.metrics:reporter-config-base",
@@ -3140,7 +3140,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "ch.qos.logback:logback-classic",
                 "com.addthis.metrics:reporter-config-base",
@@ -3820,7 +3820,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "ch.qos.logback:logback-classic",
                 "com.addthis.metrics:reporter-config-base",
@@ -4500,7 +4500,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "ch.qos.logback:logback-classic",
                 "com.addthis.metrics:reporter-config-base",

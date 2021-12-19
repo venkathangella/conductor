@@ -18,11 +18,15 @@ package com.netflix.conductor.bootstrap;
 import com.netflix.conductor.dao.IndexDAO;
 import com.netflix.conductor.elasticsearch.EmbeddedElasticSearch;
 import com.netflix.conductor.grpc.server.GRPCServer;
-import org.apache.log4j.PropertyConfigurator;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.core.LoggerContext;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.File;
 import java.util.Properties;
 
 public class BootstrapUtil {
@@ -74,7 +78,8 @@ public class BootstrapUtil {
 
     public static void loadLog4jConfig(String log4jConfigFile) throws FileNotFoundException {
         if (log4jConfigFile != null) {
-            PropertyConfigurator.configure(new FileInputStream(log4jConfigFile));
+                LoggerContext context  = (LoggerContext)LogManager.getContext(false);
+                context.setConfigLocation(new File(log4jConfigFile).toURI());
         }
     }
 

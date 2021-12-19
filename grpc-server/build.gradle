@@ -10,7 +10,7 @@ dependencies {
 
     compile "io.grpc:grpc-netty:${revGrpc}"
     compile "io.grpc:grpc-services:${revGrpc}"
-    compile "log4j:log4j:1.2.17"
+    compile "org.apache.logging.log4j:log4j:${revLog4jApi}"
 
     testCompile "io.grpc:grpc-testing:${revGrpc}"
     testCompile "org.testinfected.hamcrest-matchers:all-matchers:${revHamcrestAllMatchers}"

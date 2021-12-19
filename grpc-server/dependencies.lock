@@ -354,9 +354,9 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17"
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "net.minidev:accessors-smart": {
             "locked": "1.1",
@@ -410,7 +410,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -780,9 +780,9 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17"
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "net.minidev:accessors-smart": {
             "locked": "1.1",
@@ -836,7 +836,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1206,9 +1206,9 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17"
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "net.minidev:accessors-smart": {
             "locked": "1.1",
@@ -1262,7 +1262,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1695,9 +1695,9 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17"
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "net.minidev:accessors-smart": {
             "locked": "1.1",
@@ -1751,7 +1751,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2121,9 +2121,9 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17"
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "net.minidev:accessors-smart": {
             "locked": "1.1",
@@ -2177,7 +2177,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2575,9 +2575,9 @@
                 "io.grpc:grpc-testing"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -2680,7 +2680,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2690,8 +2690,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.springframework:spring-aop": {
             "locked": "3.0.2.RELEASE",
@@ -3167,9 +3167,9 @@
                 "io.grpc:grpc-testing"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3272,7 +3272,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -3282,8 +3282,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.springframework:spring-aop": {
             "locked": "3.0.2.RELEASE",
@@ -3759,9 +3759,9 @@
                 "io.grpc:grpc-testing"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3864,7 +3864,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -3874,8 +3874,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.springframework:spring-aop": {
             "locked": "3.0.2.RELEASE",
@@ -4351,9 +4351,9 @@
                 "io.grpc:grpc-testing"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
-            "requested": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -4456,7 +4456,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -4466,8 +4466,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.springframework:spring-aop": {
             "locked": "3.0.2.RELEASE",

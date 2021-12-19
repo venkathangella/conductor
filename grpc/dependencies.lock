@@ -301,7 +301,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -618,7 +618,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -935,7 +935,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1578,7 +1578,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1895,7 +1895,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2244,7 +2244,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2593,7 +2593,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2942,7 +2942,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -3291,7 +3291,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",

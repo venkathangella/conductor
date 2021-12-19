@@ -1298,8 +1298,8 @@
                 "org.spockframework:spock-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "com.netflix.conductor:conductor-grpc-client",
                 "com.netflix.conductor:conductor-grpc-server",
@@ -1951,7 +1951,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.29",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -3289,8 +3289,8 @@
                 "org.spockframework:spock-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "com.netflix.conductor:conductor-grpc-client",
                 "com.netflix.conductor:conductor-grpc-server",
@@ -3942,7 +3942,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.29",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -5280,8 +5280,8 @@
                 "org.spockframework:spock-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "com.netflix.conductor:conductor-grpc-client",
                 "com.netflix.conductor:conductor-grpc-server",
@@ -5933,7 +5933,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.29",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",
@@ -7271,8 +7271,8 @@
                 "org.spockframework:spock-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "com.netflix.conductor:conductor-grpc-client",
                 "com.netflix.conductor:conductor-grpc-server",
@@ -7924,7 +7924,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.29",
+            "locked": "1.7.32",
             "transitive": [
                 "com.datastax.cassandra:cassandra-driver-core",
                 "com.jayway.jsonpath:json-path",

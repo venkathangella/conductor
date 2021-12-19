@@ -222,15 +222,15 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.9.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.glassfish:javax.el": {
             "locked": "3.0.0",
@@ -246,7 +246,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -581,16 +581,16 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core",
                 "org.elasticsearch:elasticsearch"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.apache.lucene:lucene-analyzers-common": {
             "locked": "7.7.3",
@@ -810,7 +810,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -965,7 +965,7 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
+            "locked": "2.17.0",
             "transitive": [
                 "org.elasticsearch:elasticsearch"
             ]
@@ -1404,15 +1404,15 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.9.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.glassfish:javax.el": {
             "locked": "3.0.0",
@@ -1428,7 +1428,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1729,15 +1729,15 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.9.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.glassfish:javax.el": {
             "locked": "3.0.0",
@@ -1753,7 +1753,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1991,15 +1991,15 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.9.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.glassfish:javax.el": {
             "locked": "3.0.0",
@@ -2015,7 +2015,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2164,7 +2164,7 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
+            "locked": "2.17.0",
             "transitive": [
                 "org.elasticsearch:elasticsearch"
             ]
@@ -2645,8 +2645,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -2722,16 +2722,16 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core",
                 "org.elasticsearch:elasticsearch"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.apache.lucene:lucene-analyzers-common": {
             "locked": "7.7.3",
@@ -2980,7 +2980,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -2990,8 +2990,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.yaml:snakeyaml": {
             "locked": "1.17",
@@ -3271,8 +3271,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3348,16 +3348,16 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core",
                 "org.elasticsearch:elasticsearch"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.apache.lucene:lucene-analyzers-common": {
             "locked": "7.7.3",
@@ -3606,7 +3606,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -3616,8 +3616,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.yaml:snakeyaml": {
             "locked": "1.17",
@@ -3897,8 +3897,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3974,16 +3974,16 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core",
                 "org.elasticsearch:elasticsearch"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.apache.lucene:lucene-analyzers-common": {
             "locked": "7.7.3",
@@ -4232,7 +4232,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -4242,8 +4242,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.yaml:snakeyaml": {
             "locked": "1.17",
@@ -4523,8 +4523,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -4600,16 +4600,16 @@
             ]
         },
         "org.apache.logging.log4j:log4j-api": {
-            "locked": "2.11.1",
-            "requested": "2.9.1",
+            "locked": "2.17.0",
+            "requested": "2.17.0",
             "transitive": [
                 "org.apache.logging.log4j:log4j-core",
                 "org.elasticsearch:elasticsearch"
             ]
         },
         "org.apache.logging.log4j:log4j-core": {
-            "locked": "2.9.1",
-            "requested": "2.9.1"
+            "locked": "2.17.0",
+            "requested": "2.17.0"
         },
         "org.apache.lucene:lucene-analyzers-common": {
             "locked": "7.7.3",
@@ -4858,7 +4858,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.8.0-alpha1",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -4868,8 +4868,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "org.yaml:snakeyaml": {
             "locked": "1.17",

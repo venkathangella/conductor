@@ -188,8 +188,8 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.16",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -277,7 +277,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -490,8 +490,8 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.16",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -579,7 +579,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -792,8 +792,8 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.16",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -881,7 +881,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1157,8 +1157,8 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.16",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -1246,7 +1246,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1459,8 +1459,8 @@
                 "com.amazonaws:aws-java-sdk-core"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.16",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -1548,7 +1548,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1766,8 +1766,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -2119,8 +2119,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -2472,8 +2472,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"
@@ -2825,8 +2825,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.apache.zookeeper:zookeeper",
                 "org.slf4j:slf4j-log4j12"

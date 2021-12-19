@@ -93,8 +93,8 @@
             "requested": "3.0.0"
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "compileClasspath": {
@@ -191,8 +191,8 @@
             "requested": "3.0.0"
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "default": {
@@ -289,8 +289,8 @@
             "requested": "3.0.0"
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "jacocoAgent": {
@@ -450,8 +450,8 @@
             "requested": "3.0.0"
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "runtimeClasspath": {
@@ -548,8 +548,8 @@
             "requested": "3.0.0"
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "testCompile": {
@@ -678,8 +678,8 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "testCompileClasspath": {
@@ -808,8 +808,8 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "testRuntime": {
@@ -938,8 +938,8 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     },
     "testRuntimeClasspath": {
@@ -1068,8 +1068,8 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
-            "requested": "1.7.25"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         }
     }
 }

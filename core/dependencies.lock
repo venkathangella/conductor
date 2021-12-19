@@ -211,7 +211,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -438,7 +438,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -665,7 +665,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -955,7 +955,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1182,7 +1182,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.jayway.jsonpath:json-path",
                 "com.netflix.conductor:conductor-common",
@@ -1361,8 +1361,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -1457,8 +1457,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -1631,8 +1631,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -1727,8 +1727,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -1901,8 +1901,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -1997,8 +1997,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -2171,8 +2171,8 @@
             "locked": "4.12",
             "requested": "4.12"
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -2267,8 +2267,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",

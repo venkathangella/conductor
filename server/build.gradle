@@ -50,9 +50,16 @@ dependencies {
 
     //Swagger
     compile "io.swagger:swagger-jersey-jaxrs:${revSwagger}"
+
+    modules {
+        module("log4j:log4j") {
+            replacedBy("org.apache.logging.log4j:log4j-core", "Use Log4j core instead of Logback")
+        }
+    }
 }
 
 shadowJar {
+    exclude "**/Log4j2Plugins.dat"
     zip64 true
     mergeServiceFiles()
     configurations = [project.configurations.compile]
@@ -61,6 +68,7 @@ shadowJar {
         attributes 'Main-Class': 'com.netflix.conductor.bootstrap.Main'
     }
 }
+
 publishing {
     publications {
         nebula(MavenPublication) {

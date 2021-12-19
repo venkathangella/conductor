@@ -9,4 +9,9 @@ dependencies {
     compile "org.rarefiedredis.redis:redis-java:${revRarefiedRedis}"
 
     testCompile project(':conductor-core').sourceSets.test.output
+    modules {
+        module("log4j:log4j") {
+            replacedBy("org.apache.logging.log4j:log4j-core", "Use Log4j core instead of Logback")
+        }
+    }
 }

@@ -356,7 +356,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.netflix.archaius:archaius-core",
                 "com.netflix.conductor:conductor-common",
@@ -749,7 +749,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.netflix.archaius:archaius-core",
                 "com.netflix.conductor:conductor-common",
@@ -1142,7 +1142,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.netflix.archaius:archaius-core",
                 "com.netflix.conductor:conductor-common",
@@ -1744,7 +1744,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.netflix.archaius:archaius-core",
                 "com.netflix.conductor:conductor-common",
@@ -2137,7 +2137,7 @@
             ]
         },
         "org.slf4j:slf4j-api": {
-            "locked": "1.7.25",
+            "locked": "1.7.32",
             "transitive": [
                 "com.netflix.archaius:archaius-core",
                 "com.netflix.conductor:conductor-common",
@@ -2481,8 +2481,8 @@
                 "org.powermock:powermock-module-junit4-common"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -2636,8 +2636,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -2972,8 +2972,8 @@
                 "org.powermock:powermock-module-junit4-common"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3127,8 +3127,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -3463,8 +3463,8 @@
                 "org.powermock:powermock-module-junit4-common"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -3618,8 +3618,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",
@@ -3954,8 +3954,8 @@
                 "org.powermock:powermock-module-junit4-common"
             ]
         },
-        "log4j:log4j": {
-            "locked": "1.2.17",
+        "org.apache.logging.log4j:log4j": {
+            "locked": "2.17.0",
             "transitive": [
                 "org.slf4j:slf4j-log4j12"
             ]
@@ -4109,8 +4109,8 @@
             ]
         },
         "org.slf4j:slf4j-log4j12": {
-            "locked": "1.8.0-alpha1",
-            "requested": "1.8.0-alpha1"
+            "locked": "1.7.32",
+            "requested": "1.7.32"
         },
         "software.amazon.ion:ion-java": {
             "locked": "1.0.1",

@@ -37,14 +37,27 @@ public class AMQPEventQueueProperties {
     private String virtualHost = ConnectionFactory.DEFAULT_VHOST;
 
     private int port = PROTOCOL.PORT;
-
-    private int connectionTimeoutInMilliSecs = 180000;
+    // Max wait time for the connection to be established with the message broker.
+    private int connectionTimeoutInMilliSecs = 60000;
+    // If connection recovery fails due to an exception (e.g. RabbitMQ node is still not reachable),
+    // it will be retried after a fixed time interval (default is 5 seconds).
     private int networkRecoveryIntervalInMilliSecs = 5000;
-    private int requestHeartbeatTimeoutInSecs = 30;
-    private int handshakeTimeoutInMilliSecs = 180000;
-    private int maxChannelCount = 5000;
-    private int limit = 50;
-    private int duration = 1000;
+    // Defines after what period of time the peer TCP connection should be considered unreachable
+    // (down) by RabbitMQ and client libraries.
+    private int requestHeartbeatTimeoutInSecs = 60;
+    // Maximum time for AMQP 0-9-1 handshake (after socket connection and TLS handshake), in
+    // milliseconds.
+    private int handshakeTimeoutInMilliSecs = 10000;
+    // Maximum permissible number of channels on a connection
+    private int maxChannelCount = 60;
+    // Currently, retries are enabled for connection creation, channel creation, message publishing,
+    // and acknowledge of
+    // the messages failures from Subscriber.
+    private int limit = 3;
+    // Base wait duration for each retry
+    private int durationInMilliSeconds = 1000;
+    // Type of retries to adjust wait times from liner to exponential sleep times before making next
+    // attempt
     private RetryType retryType = RetryType.REGULARINTERVALS;
 
     public int getLimit() {
@@ -53,14 +66,6 @@ public class AMQPEventQueueProperties {
 
     public void setLimit(int limit) {
         this.limit = limit;
-    }
-
-    public int getDuration() {
-        return duration;
-    }
-
-    public void setDuration(int duration) {
-        this.duration = duration;
     }
 
     public RetryType getType() {
@@ -297,5 +302,13 @@ public class AMQPEventQueueProperties {
 
     public void setRequestHeartbeatTimeoutInSecs(int requestHeartbeatTimeoutInSecs) {
         this.requestHeartbeatTimeoutInSecs = requestHeartbeatTimeoutInSecs;
+    }
+
+    public int getDurationInMilliSeconds() {
+        return durationInMilliSeconds;
+    }
+
+    public void setDurationInMilliSeconds(int durationInMilliSeconds) {
+        this.durationInMilliSeconds = durationInMilliSeconds;
     }
 }

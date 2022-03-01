@@ -187,6 +187,8 @@ public class AMQPObservableQueue implements ObservableQueue {
     public List<String> ack(List<Message> messages) {
         final List<String> processedDeliveryTags = new ArrayList<>();
         for (final Message message : messages) {
+            String errMsg = "";
+            Exception exception = null;
             int retryIndex = 1;
             while (true) {
                 try {
@@ -200,20 +202,31 @@ public class AMQPObservableQueue implements ObservableQueue {
                     LOGGER.info("Ack'ed the message with delivery tag {}", message.getReceipt());
                     break;
                 } catch (final Exception e) {
-                    AMQPRetryPattern retry = retrySettings;
-                    if (retry == null) {
-                        LOGGER.error(
-                                "Cannot ACK message with delivery tag {}", message.getReceipt(), e);
+                    errMsg =
+                            String.format(
+                                    "Cannot ACK message with delivery tag %s. %s",
+                                    message.getReceipt(), e.getMessage());
+                    exception = e;
+                    LOGGER.error(errMsg, e);
+                } finally {
+                    if (exception != null) {
+                        try {
+                            LOGGER.info(
+                                    String.format(
+                                            AMQPConstants.INFO_OPERATION_RETRY,
+                                            retryIndex,
+                                            "acknowledge_message"));
+                            retrySettings.continueOrPropogate(exception, retryIndex);
+                        } catch (Exception ex) {
+                            LOGGER.warn(
+                                    String.format(
+                                            AMQPConstants.WARN_RETRIES_EXHAUSTED,
+                                            "acknowledge_message"));
+                            LOGGER.error(errMsg, ex);
+                            throw new RuntimeException(errMsg, ex);
+                        }
+                        retryIndex++;
                     }
-                    try {
-                        retry.continueOrPropogate(e, retryIndex);
-                    } catch (Exception ex) {
-                        LOGGER.error(
-                                "Retries completed. Cannot ACK message with delivery tag {}",
-                                message.getReceipt(),
-                                e);
-                    }
-                    retryIndex++;
                 }
             }
         }
@@ -240,6 +253,8 @@ public class AMQPObservableQueue implements ObservableQueue {
     private void publishMessage(Message message, String exchange, String routingKey) {
         Channel chn = null;
         int retryIndex = 1;
+        String errMsg = "";
+        Exception exception = null;
         while (true) {
             try {
                 final String payload = message.getPayload();
@@ -254,26 +269,12 @@ public class AMQPObservableQueue implements ObservableQueue {
                 LOGGER.info(String.format("Published message to %s: %s", exchange, payload));
                 break;
             } catch (Exception ex) {
-                AMQPRetryPattern retry = retrySettings;
-                if (retry == null) {
-                    LOGGER.error(
-                            "Failed to publish message {} to {}",
-                            message.getPayload(),
-                            exchange,
-                            ex);
-                    throw new RuntimeException(ex);
-                }
-                try {
-                    retry.continueOrPropogate(ex, retryIndex);
-                } catch (Exception e) {
-                    LOGGER.error(
-                            "Retries completed. Failed to publish message {} to {}",
-                            message.getPayload(),
-                            exchange,
-                            ex);
-                    throw new RuntimeException(ex);
-                }
-                retryIndex++;
+                errMsg =
+                        String.format(
+                                "Failed to publish message %s to %s",
+                                message.getPayload(), exchange);
+                exception = ex;
+                LOGGER.error(errMsg, ex);
             } finally {
                 if (chn != null) {
                     try {
@@ -284,6 +285,23 @@ public class AMQPObservableQueue implements ObservableQueue {
                                 ConnectionType.PUBLISHER,
                                 e);
                     }
+                }
+                if (exception != null) {
+                    try {
+                        LOGGER.info(
+                                String.format(
+                                        AMQPConstants.INFO_OPERATION_RETRY,
+                                        retryIndex,
+                                        "publish_message"));
+                        retrySettings.continueOrPropogate(exception, retryIndex);
+                    } catch (Exception ex) {
+                        LOGGER.warn(
+                                String.format(
+                                        AMQPConstants.WARN_RETRIES_EXHAUSTED, "publish_message"));
+                        LOGGER.error(errMsg, ex);
+                        throw new RuntimeException(errMsg, ex);
+                    }
+                    retryIndex++;
                 }
             }
         }
@@ -345,9 +363,8 @@ public class AMQPObservableQueue implements ObservableQueue {
             if (chn != null) {
                 try {
                     amqpConnection.returnChannel(ConnectionType.SUBSCRIBER, chn);
-                } catch (Exception e) {
-                    // TODO Auto-generated catch block
-                    e.printStackTrace();
+                } catch (Exception ex) {
+                    LOGGER.error("Failed to return the channel: {}", ex.getMessage(), ex);
                 }
             }
         }
@@ -456,7 +473,9 @@ public class AMQPObservableQueue implements ObservableQueue {
             final AMQPSettings settings = new AMQPSettings(properties).fromURI(queueURI);
             final AMQPRetryPattern retrySettings =
                     new AMQPRetryPattern(
-                            properties.getLimit(), properties.getDuration(), properties.getType());
+                            properties.getLimit(),
+                            properties.getDurationInMilliSeconds(),
+                            properties.getType());
             return new AMQPObservableQueue(
                     factory,
                     addresses,
@@ -494,21 +513,44 @@ public class AMQPObservableQueue implements ObservableQueue {
             throw new RuntimeException("Exchange type is undefined");
         }
         Channel chn = null;
-        try {
-            LOGGER.debug("Creating exchange {} of type {}", name, type);
-            chn =
-                    amqpConnection.getOrCreateChannel(
-                            connectionType, getSettings().getQueueOrExchangeName());
-            return chn.exchangeDeclare(name, type, isDurable, autoDelete, arguments);
-        } catch (final Exception e) {
-            LOGGER.warn("Failed to create exchange {} of type {}", name, type, e);
-            throw e;
-        } finally {
-            if (chn != null) {
-                try {
-                    amqpConnection.returnChannel(connectionType, chn);
-                } catch (Exception e) {
-                    LOGGER.error("Failed to return the channel of {}. {}", connectionType, e);
+        int retryIndex = 1;
+        String errMsg = "";
+        Exception exception = null;
+        while (true) {
+            try {
+                LOGGER.debug("Creating exchange {} of type {}", name, type);
+                chn =
+                        amqpConnection.getOrCreateChannel(
+                                connectionType, getSettings().getQueueOrExchangeName());
+                return chn.exchangeDeclare(name, type, isDurable, autoDelete, arguments);
+            } catch (Exception ex) {
+                errMsg = String.format("Failed to create exchange %s of type %", name, type);
+                exception = ex;
+                LOGGER.error(errMsg, ex);
+            } finally {
+                if (chn != null) {
+                    try {
+                        amqpConnection.returnChannel(connectionType, chn);
+                    } catch (Exception e) {
+                        LOGGER.error("Failed to return the channel of {}. {}", connectionType, e);
+                    }
+                }
+                if (exception != null) {
+                    try {
+                        LOGGER.info(
+                                String.format(
+                                        AMQPConstants.INFO_OPERATION_RETRY,
+                                        retryIndex,
+                                        "declare_exchange"));
+                        retrySettings.continueOrPropogate(exception, retryIndex);
+                    } catch (Exception ex) {
+                        LOGGER.warn(
+                                String.format(
+                                        AMQPConstants.WARN_RETRIES_EXHAUSTED, "declare_exchange"));
+                        LOGGER.error(errMsg, ex);
+                        throw new RuntimeException(errMsg, ex);
+                    }
+                    retryIndex++;
                 }
             }
         }
@@ -537,21 +579,44 @@ public class AMQPObservableQueue implements ObservableQueue {
         }
         arguments.put(QUEUE_TYPE, settings.getQueueType());
         Channel chn = null;
-        try {
-            LOGGER.debug("Creating queue {}", name);
-            chn =
-                    amqpConnection.getOrCreateChannel(
-                            connectionType, getSettings().getQueueOrExchangeName());
-            return chn.queueDeclare(name, isDurable, isExclusive, autoDelete, arguments);
-        } catch (final Exception e) {
-            LOGGER.warn("Failed to create queue {}", name, e);
-            throw e;
-        } finally {
-            if (chn != null) {
-                try {
-                    amqpConnection.returnChannel(connectionType, chn);
-                } catch (Exception e) {
-                    LOGGER.error("Failed to return the channel of {}. {}", connectionType, e);
+        int retryIndex = 1;
+        String errMsg = "";
+        Exception exception = null;
+        while (true) {
+            try {
+                LOGGER.debug("Creating queue {}", name);
+                chn =
+                        amqpConnection.getOrCreateChannel(
+                                connectionType, getSettings().getQueueOrExchangeName());
+                return chn.queueDeclare(name, isDurable, isExclusive, autoDelete, arguments);
+            } catch (final Exception e) {
+                errMsg = String.format("Failed to create queue %s", name);
+                exception = e;
+                LOGGER.error(errMsg, e);
+            } finally {
+                if (chn != null) {
+                    try {
+                        amqpConnection.returnChannel(connectionType, chn);
+                    } catch (Exception e) {
+                        LOGGER.error("Failed to return the channel of {}. {}", connectionType, e);
+                    }
+                }
+                if (exception != null) {
+                    try {
+                        LOGGER.info(
+                                String.format(
+                                        AMQPConstants.INFO_OPERATION_RETRY,
+                                        retryIndex,
+                                        "declare_exchange"));
+                        retrySettings.continueOrPropogate(exception, retryIndex);
+                    } catch (Exception ex) {
+                        LOGGER.warn(
+                                String.format(
+                                        AMQPConstants.WARN_RETRIES_EXHAUSTED, "declare_exchange"));
+                        LOGGER.error(errMsg, ex);
+                        throw new RuntimeException(errMsg, ex);
+                    }
+                    retryIndex++;
                 }
             }
         }

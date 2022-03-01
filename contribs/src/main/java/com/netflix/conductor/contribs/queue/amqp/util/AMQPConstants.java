@@ -82,4 +82,7 @@ public class AMQPConstants {
     public static final String INFO_CHANNEL_RESET_SUCCESS =
             "No proper channels available in the pool. Created a "
                     + "channel for the connection type [%s]";
+    public static final String INFO_OPERATION_RETRY = "Retry attempt [%d] for operation [%s]";
+    public static final String WARN_RETRIES_EXHAUSTED =
+            "The maximum number of retry attempts for operation" + " [%s] is reached";
 }

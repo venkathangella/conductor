@@ -16,15 +16,15 @@ import com.netflix.conductor.contribs.queue.amqp.util.RetryType;
 
 public class AMQPRetryPattern {
 
-    private int limit = 50;
-    private int duration = 1000;
+    private int limit = 3;
+    private int durationInMilliSecs = 1000;
     private RetryType type = RetryType.REGULARINTERVALS;
 
     public AMQPRetryPattern() {}
 
-    public AMQPRetryPattern(int limit, int duration, RetryType type) {
+    public AMQPRetryPattern(int limit, int durationInMilliSecs, RetryType type) {
         this.limit = limit;
-        this.duration = duration;
+        this.durationInMilliSecs = durationInMilliSecs;
         this.type = type;
     }
 
@@ -39,11 +39,11 @@ public class AMQPRetryPattern {
             throw ex;
         }
         // Regular Intervals is the default
-        long waitDuration = duration;
+        long waitDuration = durationInMilliSecs;
         if (type == RetryType.INCREMENTALINTERVALS) {
-            waitDuration = duration * retryIndex;
+            waitDuration = durationInMilliSecs * retryIndex;
         } else if (type == RetryType.EXPONENTIALBACKOFF) {
-            waitDuration = (long) Math.pow(2, retryIndex) * duration;
+            waitDuration = (long) Math.pow(2, retryIndex) * durationInMilliSecs;
         }
         try {
             Thread.sleep(waitDuration);

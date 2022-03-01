@@ -82,6 +82,8 @@ public class AMQPConnection {
 
     private Connection createConnection(String connectionPrefix) {
         int retryIndex = 1;
+        String errMsg = "";
+        Exception exception = null;
         while (true) {
             try {
                 Connection connection =
@@ -120,51 +122,39 @@ public class AMQPConnection {
                         });
                 return connection;
             } catch (final IOException e) {
-                AMQPRetryPattern retry = retrySettings;
-                if (retry == null) {
-                    final String error =
-                            "IO error while connecting to "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(","));
-                    LOGGER.error(error, e);
-                    throw new RuntimeException(error, e);
-                }
-                try {
-                    retry.continueOrPropogate(e, retryIndex);
-                } catch (Exception ex) {
-                    final String error =
-                            "Retries completed. IO error while connecting to "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(","));
-                    LOGGER.error(error, e);
-                    throw new RuntimeException(error, e);
-                }
-                retryIndex++;
+                exception = e;
+                errMsg =
+                        "IO error while connecting to "
+                                + Arrays.stream(addresses)
+                                        .map(address -> address.toString())
+                                        .collect(Collectors.joining(","));
+                LOGGER.error(errMsg, e);
             } catch (final TimeoutException e) {
-                AMQPRetryPattern retry = retrySettings;
-                if (retry == null) {
-                    final String error =
-                            "Timeout while connecting to "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(","));
-                    LOGGER.error(error, e);
-                    throw new RuntimeException(error, e);
+                exception = e;
+                errMsg =
+                        "Timeout while connecting to "
+                                + Arrays.stream(addresses)
+                                        .map(address -> address.toString())
+                                        .collect(Collectors.joining(","));
+                LOGGER.error(errMsg, e);
+            } finally {
+                if (exception != null && retrySettings != null) {
+                    try {
+                        LOGGER.info(
+                                String.format(
+                                        AMQPConstants.INFO_OPERATION_RETRY,
+                                        retryIndex,
+                                        "create_connection"));
+                        retrySettings.continueOrPropogate(exception, retryIndex);
+                    } catch (Exception ex) {
+                        LOGGER.warn(
+                                String.format(
+                                        AMQPConstants.WARN_RETRIES_EXHAUSTED, "create_connection"));
+                        LOGGER.error(errMsg, ex);
+                        throw new RuntimeException(errMsg, ex);
+                    }
+                    retryIndex++;
                 }
-                try {
-                    retry.continueOrPropogate(e, retryIndex);
-                } catch (Exception ex) {
-                    final String error =
-                            "Retries completed. Timeout while connecting to "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(","));
-                    LOGGER.error(error, e);
-                    throw new RuntimeException(error, e);
-                }
-                retryIndex++;
             }
         }
     }
@@ -210,6 +200,8 @@ public class AMQPConnection {
         // Channel creation is required
         Channel locChn = null;
         int retryIndex = 1;
+        String errMsg = "";
+        Exception exception = null;
         while (true) {
             try {
                 LOGGER.debug("Creating a channel for " + connType);
@@ -226,55 +218,42 @@ public class AMQPConnection {
                         });
                 return locChn;
             } catch (final IOException e) {
-                AMQPRetryPattern retry = retrySettings;
-                if (retry == null) {
-                    throw new RuntimeException(
-                            "Cannot open "
-                                    + connType
-                                    + " channel on "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(",")),
-                            e);
-                }
-                try {
-                    retry.continueOrPropogate(e, retryIndex);
-                } catch (Exception ex) {
-                    throw new RuntimeException(
-                            "Retries completed. Cannot open "
-                                    + connType
-                                    + " channel on "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(",")),
-                            e);
-                }
-                retryIndex++;
+                errMsg =
+                        "Cannot open "
+                                + connType
+                                + " channel on "
+                                + Arrays.stream(addresses)
+                                        .map(address -> address.toString())
+                                        .collect(Collectors.joining(","));
+                exception = e;
             } catch (final Exception e) {
-                AMQPRetryPattern retry = retrySettings;
-                if (retry == null) {
-                    throw new RuntimeException(
-                            "Cannot open "
-                                    + connType
-                                    + " channel on "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(",")),
-                            e);
+                errMsg =
+                        "Cannot open "
+                                + connType
+                                + " channel on "
+                                + Arrays.stream(addresses)
+                                        .map(address -> address.toString())
+                                        .collect(Collectors.joining(","));
+                exception = e;
+
+            } finally {
+                if (exception != null && retrySettings != null) {
+                    try {
+                        LOGGER.info(
+                                String.format(
+                                        AMQPConstants.INFO_OPERATION_RETRY,
+                                        retryIndex,
+                                        "create_channel"));
+                        retrySettings.continueOrPropogate(exception, retryIndex);
+                    } catch (Exception ex) {
+                        LOGGER.warn(
+                                String.format(
+                                        AMQPConstants.WARN_RETRIES_EXHAUSTED, "create_channel"));
+                        LOGGER.error(errMsg, ex);
+                        throw new RuntimeException(errMsg, ex);
+                    }
+                    retryIndex++;
                 }
-                try {
-                    retry.continueOrPropogate(e, retryIndex);
-                } catch (Exception ex) {
-                    throw new RuntimeException(
-                            "Retries completed. Cannot open "
-                                    + connType
-                                    + " channel on "
-                                    + Arrays.stream(addresses)
-                                            .map(address -> address.toString())
-                                            .collect(Collectors.joining(",")),
-                            e);
-                }
-                retryIndex++;
             }
         }
     }
@@ -364,7 +343,8 @@ public class AMQPConnection {
             }
         }
         Channel channel = getOrCreateChannel(connectionType, rmqConnection);
-        LOGGER.info(String.format(AMQPConstants.INFO_CHANNEL_RESET_SUCCESS, connectionType));
+        //        LOGGER.info(String.format(AMQPConstants.INFO_CHANNEL_RESET_SUCCESS,
+        // connectionType));
         return channel;
     }
 

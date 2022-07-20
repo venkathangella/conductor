@@ -46,9 +46,7 @@ import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.eq;
-import static org.mockito.Mockito.doNothing;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.when;
 
 @SuppressWarnings({"rawtypes", "unchecked"})
 @FixMethodOrder
@@ -143,7 +141,7 @@ public class AMQPObservableQueueTest {
 
     @Test(expected = RuntimeException.class)
     public void testAck_OnFailure() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connection.createChannel()).thenReturn(channel);
         Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, false);
@@ -156,8 +154,8 @@ public class AMQPObservableQueueTest {
 
     @Test
     public void testAck() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
-    	Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
+        Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, false);
         Mockito.doNothing().when(channel).basicAck(anyLong(), eq(false));
@@ -169,7 +167,7 @@ public class AMQPObservableQueueTest {
 
     @Test
     public void testPollTime() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connection.createChannel()).thenReturn(channel);
         Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, true);
@@ -179,7 +177,7 @@ public class AMQPObservableQueueTest {
 
     @Test
     public void testSize() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connection.createChannel()).thenReturn(channel);
         Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, true);
@@ -200,7 +198,7 @@ public class AMQPObservableQueueTest {
     // publish messages on proper connection
     @Test
     public void testPublish() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connection.createChannel()).thenReturn(channel);
         Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, true);
@@ -219,8 +217,8 @@ public class AMQPObservableQueueTest {
     // publish messages on improper connection
     @Test
     public void testPublish_OnChannelFailures() throws IOException, TimeoutException {
-    	Mockito.when(connection.createChannel()).thenReturn(channel);
-    	Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
+        Mockito.when(connection.createChannel()).thenReturn(channel);
+        Mockito.when(connectionFactory.newConnection(eq(addresses), Mockito.anyString()))
                 .thenReturn(connection);
         AMQPObservableQueue observableQueue = getAMQPObservableInstance(connectionFactory, true);
         Mockito.when(channel.isOpen()).thenReturn(Boolean.TRUE);
